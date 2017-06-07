@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace DACK_WEB2.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class QLLoaiSanPhamController : Controller
     {
         // GET: Admin/QLLoaiSanPham
