@@ -10,12 +10,12 @@ namespace DACK_WEB2.Controllers
     public class SanPhamController : Controller
     {
         // GET: SanPham
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
 
-            var dsSanPham = SanPhamBus.HienThiDanhSachSanPham();
+            var dsSanPham = SanPhamBus.HienThiDanhSachSanPham(page, 3);
             return View(dsSanPham);
-            
+
         }
 
         // GET: SanPham/Details/5
