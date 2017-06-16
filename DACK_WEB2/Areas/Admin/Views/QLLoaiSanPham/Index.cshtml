@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BabyShopConnection.loaisanpham>
+﻿@model PetaPoco.Page<BabyShopConnection.loaisanpham>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -19,14 +19,14 @@
             <thead>
                 <tr>
                     <th width="100" align="center">Mã Loại Sản Phẩm</th>
-                    <th width="200" align="center">Tên Loại Sản Phẩm</th>
+                    <th width="250" align="center">Tên Loại Sản Phẩm</th>
                     <th width="50" align="center">Trạng thái</th>
-                    <th width="150" align="center">Thao tác</th>
+                    <th width="100" align="center">Thao tác</th>
                 </tr>
             </thead>
             <tbody>
                 @{ int i = 1; }
-                @foreach (var item in Model)
+                @foreach(var item in Model.Items)
                 {
 
                     <tr class="gradeX">
@@ -34,10 +34,10 @@
                         <td>@item.TenLoaiSanPham</td>
                         <td>@item.BiXoa</td>
                         <td>
-                            <a href="@Url.Action("Edit","QLSanPham", new { id = item.MaLoaiSanPham})">
+                            <a href="@Url.Action("Edit","QLLoaiSanPham", new { id = item.MaLoaiSanPham})">
                                 <img src="@Url.Content("~/Areas/Admin/Asset/images/edit.png")" />
                             </a> |
-                            <a href="@Url.Action("Delete", "QLSanPham", new { id = item.MaLoaiSanPham })">
+                            <a href="@Url.Action("Delete", "QLLoaiSanPham", new { id = item.MaLoaiSanPham })">
                                 <img src="@Url.Content("~/Areas/Admin/Asset/images/delete.png")" />
                             </a>
                         </td>
@@ -47,3 +47,11 @@
         </table>
     </div>
 </div>
+<ul class="pagination" align="right">
+    @for (int n = 1; n <= Model.TotalPages; n++)
+    {
+
+        <d>@Html.ActionLink(n.ToString(), "Index", new { page = n })</d>
+
+    }
+</ul>

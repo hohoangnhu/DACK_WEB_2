@@ -199,9 +199,11 @@
     <Compile Include="Areas\Admin\Controllers\QLLoaiSanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLNhaSanXuatController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLSanPhamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QLTaiKhoanController.cs" />
     <Compile Include="Areas\Admin\Models\BUS\QLloaisanphambus.cs" />
     <Compile Include="Areas\Admin\Models\BUS\QLNhaSanXuatbus.cs" />
     <Compile Include="Areas\Admin\Models\BUS\QLsanphambus.cs" />
+    <Compile Include="Areas\Admin\Models\BUS\QLTaiKhoanbus.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiSanPhamController.cs" />
@@ -421,6 +423,9 @@
     <Content Include="Areas\Admin\Views\QLLoaiSanPham\Create.cshtml" />
     <Content Include="Models\Generated\PetaPoco.Generator.ttinclude" />
     <Content Include="Models\Generated\PetaPoco.Core.ttinclude" />
+    <Content Include="Areas\Admin\Views\QLNhaSanXuat\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QLLoaiSanPham\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\QLTaiKhoan\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -482,6 +487,7 @@
     <Folder Include="Areas\Admin\Asset\font-awesome\" />
     <Folder Include="Areas\Admin\Asset\img\" />
     <Folder Include="Areas\Admin\Asset\js\" />
+    <Folder Include="Areas\Admin\ckeditor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

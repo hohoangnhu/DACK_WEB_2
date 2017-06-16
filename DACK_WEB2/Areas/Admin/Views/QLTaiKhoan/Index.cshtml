@@ -1,0 +1,78 @@
+﻿@model PetaPoco.Page<BabyShopConnection.AspNetUser>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>DANH SÁCH TÀI KHOẢN</h2>
+
+
+<div class="widget-box">
+    <div class="widget-title">
+        <span class="icon"><i class="icon-th"></i></span>
+        <h5>Data table</h5>
+    </div>
+    <div class="widget-content nopadding">
+        <table class="table table-bordered data-table">
+            <thead>
+                <tr>
+                    <td width="10">STT</td>
+                    <th width="20" align="center">ID</th>
+                    <th width="70" align="center">Email</th>
+                    <th width="30" align="center">Email Confirmed</th>
+                    <th width="40" align="center">PassWordHash</th>
+                    <th width="30" align="center">Security</th>
+                    @*<th width="20" align="center">PhoneNumber</th>*@
+                    @*<th width="20" align="center">PhoneNumberConfirm</th>*@
+                    @*<th width="20" align="center">TwoFactor</th>*@
+                    @*<th width="20" align="center">Lockout end date utc</th>*@
+                    <th width="20" align="center">Lockout enable</th>
+                    <th width="20" align="center">Access Failed</th>
+                    <th width="20" align="center">Username</th>
+                    <th width="20">Thao Tác</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @{ int j = 1; }
+                @foreach (var item in Model.Items)
+                {
+
+                    <tr class="gradeX">
+                        <td>@(j++)</td>
+                        <td>@item.Id</td>
+                        <td>@item.Email</td>
+                        <td>@item.EmailConfirmed</td>
+                        <td>@item.PasswordHash</td>
+                        @*<td>@item.PasswordHash</td>*@
+                        <td>@item.SecurityStamp</td>
+                        @*<td>@item.PhoneNumber</td>*@
+                        @*<td>@item.PhoneNumberConfirmed</td>*@
+                        @*<td>@item.TwoFactorEnabled</td>*@
+                        @*<td>@item.LockoutEndDateUtc</td>*@
+                        <td>@item.LockoutEnabled</td>
+                        <td>@item.AccessFailedCount</td>
+                        <td>@item.UserName</td>
+                        <td>
+                            @*<a href="@Url.Action("Edit","QLLoaiSanPham", new { id = item.MaLoaiSanPham})">
+                            <img src="@Url.Content("~/Areas/Admin/Asset/images/edit.png")" />
+                        </a> |*@
+                            <a href="@Url.Action("Delete", "QLLoaiSanPham", new { id = item.Id })">
+                                <img src="@Url.Content("~/Areas/Admin/Asset/images/delete.png")" />
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ul class="pagination" align="right">
+    @for (int n = 1; n <= Model.TotalPages; n++)
+    {
+
+        <d>@Html.ActionLink(n.ToString(), "Index", new { page = n })</d>
+
+    }
+</ul>

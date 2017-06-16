@@ -25,7 +25,7 @@
 // 
 //     Connection String Name: `BabyShopConnection`
 //     Provider:               `System.Data.SqlClient`
-//     Connection String:      `Data Source=THAMVO-PC;Initial Catalog=babyshop4;Integrated Security=True`
+//     Connection String:      `Data Source=DESKTOP-Q1JH5H2;Initial Catalog=babyshop4;Integrated Security=True`
 //     Schema:                 ``
 //     Include Views:          `False`
 

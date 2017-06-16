@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BabyShopConnection.nhasanxuat>
+﻿@model PetaPoco.Page<BabyShopConnection.nhasanxuat>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -27,7 +27,7 @@
             </thead>
             <tbody>
                 @{ int i = 1; }
-                @foreach (var item in Model)
+                @foreach(var item in Model.Items)
                 {
 
                     <tr class="gradeX">
@@ -36,10 +36,10 @@
                         <td width="100"align="center" height="75"><img src="@Url.Content("~/images/home/" + @item.LoGoURL + ".jpg")" /></td>
                         <td>@item.BiXoa</td>
                         <td>
-                            <a href="@Url.Action("Edit","QLSanPham", new { id = item.MaNhaSanXuat})">
+                            @*<a href="@Url.Action("Edit","QLNhaSanXuat", new { id = item.MaNhaSanXuat})">
                                 <img src="@Url.Content("~/Areas/Admin/Asset/images/edit.png")" />
-                            </a> |
-                            <a href="@Url.Action("Delete", "QLSanPham", new { id = item.MaNhaSanXuat })">
+                            </a> |*@
+                            <a href="@Url.Action("Delete", "QLNhaSanXuat", new { id = item.MaNhaSanXuat })">
                                 <img src="@Url.Content("~/Areas/Admin/Asset/images/delete.png")" />
                             </a>
                         </td>
@@ -50,7 +50,14 @@
     </div>
 </div>
 
+<ul class="pagination" align="right">
+    @for (int n = 1; n <= Model.TotalPages; n++)
+    {
 
+        <d>@Html.ActionLink(n.ToString(), "Index", new { page = n })</d>
+
+    }
+</ul>
 
 
 

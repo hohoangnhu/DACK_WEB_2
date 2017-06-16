@@ -12,9 +12,9 @@ namespace DACK_WEB2.Areas.Admin.Controllers
     public class QLNhaSanXuatController : Controller
     {
         // GET: Admin/QLNhaSanXuat
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var ds = QLNhaSanXuatbus.HienThiDanhSachNSX();
+            var ds = QLNhaSanXuatbus.HienThiDanhNhaSanXuat(page,3);
             return View(ds);
         }
 
@@ -53,23 +53,38 @@ namespace DACK_WEB2.Areas.Admin.Controllers
         // GET: Admin/QLNhaSanXuat/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(QLNhaSanXuatbus.ChiTietNhaSanXuat(id));
         }
 
         // POST: Admin/QLNhaSanXuat/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, nhasanxuat nsx)
         {
-            try
-            {
-                // TODO: Add update logic here
+            //try
+            //{
+            //    // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
+            //    return RedirectToAction("Index");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
+            if (HttpContext.Request.Files.Count > 0)
             {
-                return View();
+                var hpf = HttpContext.Request.Files[0];
+                if (hpf.ContentLength > 0)
+                {
+                    string fileName = Guid.NewGuid().ToString();
+
+                    string fullPathWithFileName = "~/images/home/" + fileName + ".jpg";
+                    hpf.SaveAs(Server.MapPath(fullPathWithFileName));
+                    nsx.LoGoURL = fileName + ".jpg";
+                }
             }
+            QLNhaSanXuatbus.EditNhaSanXuat(id, nsx);
+            return RedirectToAction("Index");
+
         }
 
         // GET: Admin/QLNhaSanXuat/Delete/5
