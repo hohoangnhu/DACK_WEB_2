@@ -1,0 +1,18 @@
+﻿@model IEnumerable<BabyShopConnection.GioHang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@foreach ( var item in Model )
+{
+    <div>
+        <form>
+            <div>@item.MaSanPham</div>
+            <div><input name="so_luong" value="@item.SoLuong" /></div>
+            <div><input type="submit" value="Cập Nhật"/></div>
+        </form>
+    </div>
+}
+

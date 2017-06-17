@@ -32,7 +32,7 @@ namespace DACK_WEB2.Areas.Admin.Controllers
 
         // POST: Admin/QLLoaiSanPham/Create
         [HttpPost]
-        public ActionResult Create(loaisanpham lsp)
+        public ActionResult Create(BabyShopConnection.loaisanpham lsp)
         {
 
             QLloaisanphambus.ThemLoaiSanPham(lsp);
@@ -47,7 +47,7 @@ namespace DACK_WEB2.Areas.Admin.Controllers
 
         // POST: Admin/QLLoaiSanPham/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, loaisanpham lsp)
+        public ActionResult Edit(int id,BabyShopConnection.loaisanpham lsp)
         {
             //try
             //{
