@@ -25,7 +25,7 @@
                         @using (Html.BeginForm("ThemGioHang", "GioHang", FormMethod.Post))
                         {
                             @Html.Hidden("maSanPham", item.MaSanPham)
-                            <button class="btn btn-default add-to-cart">
+                            <button class="btn btn-default add-to-cart" type="submit">
                                 <i class="fa fa-shopping-cart"></i>Add to cart
                             </button>
                         }

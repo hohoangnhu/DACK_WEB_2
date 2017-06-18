@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\loaisanpham.cs" />
     <Compile Include="Areas\Admin\Controllers\QLLoaiSanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLNhaSanXuatController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLSanPhamController.cs" />
@@ -206,6 +207,7 @@
     <Compile Include="Areas\Admin\Models\BUS\QLsanphambus.cs" />
     <Compile Include="Areas\Admin\Models\BUS\QLTaiKhoanbus.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiSanPhamController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -217,6 +219,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bus\BinhLuanBUS.cs" />
+    <Compile Include="Models\Bus\GioHangBUS.cs" />
     <Compile Include="Models\Bus\LoaiSanPhamBUS.cs" />
     <Compile Include="Models\Bus\NhaSanXuatBUS.cs" />
     <Compile Include="Models\Bus\SanPhamBus.cs" />
@@ -802,6 +805,7 @@
     <Content Include="Views\LoaiSanPham\Index.cshtml" />
     <Content Include="Views\Shared\_LoaiSanPham.cshtml" />
     <Content Include="Views\BinhLuan\Index.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
