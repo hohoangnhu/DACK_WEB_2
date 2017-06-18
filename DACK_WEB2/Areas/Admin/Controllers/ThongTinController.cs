@@ -1,4 +1,4 @@
-﻿using DACK_WEB2.Areas.Admin.Models.BUS;
+﻿using DACK_WEB2.Models.Bus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,29 +7,28 @@ using System.Web.Mvc;
 
 namespace DACK_WEB2.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    public class QLTaiKhoanController : Controller
+    public class ThongTinController : Controller
     {
-        // GET: Admin/QLTaiKhoan
-        public ActionResult Index(int page = 1)
+        // GET: Admin/ThongTin
+        public ActionResult Index(int id)
         {
-            var ds = QLTaiKhoanbus.HienThiDanhSachTaiKhoan(page, 3);
-            return View(ds);
+            var ctSanPham = ThongTinBus.ThongTin(id);
+            return View(ctSanPham);
         }
 
-        // GET: Admin/QLTaiKhoan/Details/5
+        // GET: Admin/ThongTin/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Admin/QLTaiKhoan/Create
+        // GET: Admin/ThongTin/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/QLTaiKhoan/Create
+        // POST: Admin/ThongTin/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -45,13 +44,13 @@ namespace DACK_WEB2.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/QLTaiKhoan/Edit/5
+        // GET: Admin/ThongTin/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Admin/QLTaiKhoan/Edit/5
+        // POST: Admin/ThongTin/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -67,13 +66,13 @@ namespace DACK_WEB2.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/QLTaiKhoan/Delete/5
+        // GET: Admin/ThongTin/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Admin/QLTaiKhoan/Delete/5
+        // POST: Admin/ThongTin/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

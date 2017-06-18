@@ -173,6 +173,30 @@ namespace BabyShopConnection
 		[Column] public bool LockoutEnabled { get; set; }
 		[Column] public int AccessFailedCount { get; set; }
 		[Column] public string UserName { get; set; }
+<<<<<<< HEAD
+
+
+
+
+
+		[Column] public string FullName { get; set; }
+
+
+
+
+
+		[Column] public bool? Gender { get; set; }
+
+
+
+
+
+		[Column] public string NgaySinh { get; set; }
+
+
+
+=======
+>>>>>>> 04fd6c6d48a90f38c9d0c7e1c4c03ec29d716a75
 	}
     
 	[TableName("dbo.BinhLuan")]

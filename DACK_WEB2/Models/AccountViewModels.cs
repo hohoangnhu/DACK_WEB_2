@@ -68,6 +68,14 @@ namespace DACK_WEB2.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+        //[Display(Name = "User Name"), Required]
+        //public string UserName { get; set; }
+        [Display(Name = "Full Name"), Required]
+        public string FullName { get; set; }
+        [Display(Name = "Gender"), Required]
+        public bool Gender { get; set; }
+        [Display(Name = "Ngay Sinh"), Required]
+        public string NgaySinh { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -87,7 +95,7 @@ namespace DACK_WEB2.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-
+       
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
