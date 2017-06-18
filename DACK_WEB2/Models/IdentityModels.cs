@@ -3,12 +3,21 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations;
 
 namespace DACK_WEB2.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        [Display(Name = "Full Name"), Required]
+        public string FullName { get; set; }
+
+        [Display(Name = "Gender"),Required]
+        public bool Gender { get; set; }
+
+        [Display(Name = "Ngay Sinh"),Required]
+        public string NgaySinh { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

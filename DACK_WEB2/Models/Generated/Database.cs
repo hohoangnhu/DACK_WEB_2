@@ -392,6 +392,24 @@ namespace BabyShopConnection
 
 
 
+
+
+		[Column] public string FullName { get; set; }
+
+
+
+
+
+		[Column] public bool? Gender { get; set; }
+
+
+
+
+
+		[Column] public string NgaySinh { get; set; }
+
+
+
 	}
 
     

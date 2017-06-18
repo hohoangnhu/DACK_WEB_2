@@ -1,0 +1,18 @@
+﻿@model BabyShopConnection.AspNetUser
+@{
+    ViewBag.Title = "ThongTin";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>ThongTin</h2>
+<div class="col-sm-7">
+    <div class="product-information">
+    
+        <!--/product-information-->
+        <p><b>Họ Tên:</b> @Model.FullName</p>
+        <p><b>Ngày Sinh:</b> @Model.NgaySinh</p>
+        <p><b>Giới Tính (Nam = 1, Nữ = 0) :</b> @Model.Gender</p>
+    
+    </div><!--/product-information-->
+</div>
+</div>
