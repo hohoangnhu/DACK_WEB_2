@@ -21,11 +21,11 @@ namespace DACK_WEB2.Models.Bus
                 db.Insert(gioHang);
             }
         }
-        public static IEnumerable<GioHang> DanhSach(string maTaiKhoan)
+        public static IEnumerable<v_GioHang> DanhSach(string maTaiKhoan)
         {
             using (var db = new BabyShopConnectionDB())
             {
-                return db.Query<GioHang>("select * from GioHang where MaTaiKhoan = @0", maTaiKhoan);
+                return db.Query<v_GioHang>("select * from v_GioHang where MaTaiKhoan = @0", maTaiKhoan);
 
             }
         }

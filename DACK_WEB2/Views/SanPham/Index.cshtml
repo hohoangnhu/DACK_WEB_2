@@ -22,7 +22,7 @@
                             <h2>@item.GiaBan</h2>
                             <p>@item.TenSanPham</p>
                         </a>
-                        @using (Html.BeginForm("ThemGioHang", "GioHang", FormMethod.Post))
+                        @using (Html.BeginForm("Them", "GioHang", FormMethod.Post))
                         {
                             @Html.Hidden("maSanPham", item.MaSanPham)
                             <button class="btn btn-default add-to-cart" type="submit">
@@ -42,10 +42,10 @@
         </div>
     </div>
 }
-<ul class="pagination">
+@*<ul class="pagination">
     @for (int i = 1; i <= Model.TotalPages; i++)
     {
         <li>@Html.ActionLink(i.ToString(), "Index", new { page = i })</li>
     }
-</ul>
+</ul>*@
 

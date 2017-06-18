@@ -10,8 +10,8 @@ namespace DACK_WEB2.Controllers
 {
     public class GioHangController : Controller
     {
-        //  [Authorize]
-        // GET: GioHang
+         [Authorize]
+         //GET: GioHang
         public ActionResult Index()
         {
             return View(GioHangBUS.DanhSach(User.Identity.GetUserId()));

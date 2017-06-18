@@ -8,7 +8,7 @@
 //     Provider:               `System.Data.SqlClient`
 //     Connection String:      `Data Source=DESKTOP-RH4N778\SQLEXPRESS;Initial Catalog=babyshop5;Integrated Security=True`
 //     Schema:                 ``
-//     Include Views:          `False`
+//     Include Views:          `True`
 
 using System;
 using System.Collections.Generic;
@@ -296,5 +296,16 @@ namespace BabyShopConnection
     {
 		[Column] public int MaTinhTrang { get; set; }
 		[Column] public string TenTinhTrang { get; set; }
+	}
+    
+	[TableName("dbo.v_GioHang")]
+	[ExplicitColumns]
+    public partial class v_GioHang : BabyShopConnectionDB.Record<v_GioHang>  
+    {
+		[Column] public int id { get; set; }
+		[Column] public string MaTaiKhoan { get; set; }
+		[Column] public int MaSanPham { get; set; }
+		[Column] public int SoLuong { get; set; }
+		[Column] public string TenSanPham { get; set; }
 	}
 }
