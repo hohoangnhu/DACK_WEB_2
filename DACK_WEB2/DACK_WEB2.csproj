@@ -815,6 +815,7 @@
     <Content Include="Views\Shared\_LoaiSanPham.cshtml" />
     <Content Include="Views\BinhLuan\Index.cshtml" />
     <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\GioHang\ThanhToan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
