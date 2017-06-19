@@ -29,5 +29,12 @@ namespace DACK_WEB2.Models.Bus
 
             }
         }
+        public static void CapNhat(int id, int soLuong)
+        {
+            using (var db = new BabyShopConnectionDB())
+            {
+                db.Execute("update from GioHang set [SoLuong] = @0 where id = @1", soLuong, id);
+            }
+        }
     }
 }
