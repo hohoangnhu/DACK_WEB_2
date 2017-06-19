@@ -1,4 +1,4 @@
-﻿using DACK_WEB2.Models.Bus;
+﻿using DACK_WEB2.Areas.Admin.Models.BUS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,28 +7,28 @@ using System.Web.Mvc;
 
 namespace DACK_WEB2.Areas.Admin.Controllers
 {
-    public class ThongTinController : Controller
+    public class ThongKeController : Controller
     {
-        // GET: Admin/ThongTin
-        public ActionResult Index(int id)
+        // GET: Admin/ThongKe
+        public ActionResult Index()
         {
-            var ctSanPham = ThongTinBus.ThongTin(id);
-            return View(ctSanPham);
+            ViewBag.Top10 = QLThongKe.GetTop10();
+            return View();
         }
 
-        // GET: Admin/ThongTin/Details/5
+        // GET: Admin/ThongKe/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Admin/ThongTin/Create
+        // GET: Admin/ThongKe/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/ThongTin/Create
+        // POST: Admin/ThongKe/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -44,13 +44,13 @@ namespace DACK_WEB2.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/ThongTin/Edit/5
+        // GET: Admin/ThongKe/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Admin/ThongTin/Edit/5
+        // POST: Admin/ThongKe/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -66,13 +66,13 @@ namespace DACK_WEB2.Areas.Admin.Controllers
             }
         }
 
-        // GET: Admin/ThongTin/Delete/5
+        // GET: Admin/ThongKe/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Admin/ThongTin/Delete/5
+        // POST: Admin/ThongKe/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

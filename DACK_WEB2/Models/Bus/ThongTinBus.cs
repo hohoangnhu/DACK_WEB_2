@@ -8,11 +8,12 @@ namespace DACK_WEB2.Models.Bus
 {
     public class ThongTinBus
     {
-        public static IEnumerable<AspNetUser> ThongTin(int id)
+        public static AspNetUser layThongTin(string id)
         {
-            var db = new BabyShopConnectionDB();
-            return db.Query<AspNetUser>("SELECT FullName, Gender, GiaBan, NgaySinh"
-                                        + " FROM AspNetUsers WHEE Id = @", id);
+            using (var db = new BabyShopConnectionDB())
+            {
+                return db.SingleOrDefault<AspNetUser>("Select FullName , NgaySinh , GenDer From AspNetUsers Where Id = @0", id);
+            }
         }
     }
 }

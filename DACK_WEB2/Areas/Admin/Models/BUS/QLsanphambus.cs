@@ -41,7 +41,15 @@ namespace DACK_WEB2.Areas.Admin.Models.BUS
         public static Page<sanpham> HienThiDanhSachSanPham(int pageNumber, int itemPerpage)
         {
             var db = new BabyShopConnectionDB();
-            return db.Page<sanpham>(pageNumber, itemPerpage, "SELECT * FROM SanPham WHERE BiXoa <> 1 ORDER BY SoLuongBan DESC ");
+            return db.Page<sanpham>(pageNumber, itemPerpage, "select sp.*, lsp.TenLoaiSanPham as TenLoai, nsx.TenNhaSanXuat as TenNSX "
+                                                             + "from sanpham sp join loaisanpham lsp on sp.MaLoaiSanPham = lsp.MaLoaiSanPham join nhasanxuat nsx on sp.MaNhaSanXuat = nsx.MaNhaSanXuat"
+                                                             + "WHERE sp.BiXoa <> 1 ORDER BY sp.SoLuongBan DESC");
+        }
+        public static PetaPoco.Page<sanpham> TimKiem(string key, string order, int pgNumb = 1, int itemsPerPg = 20)
+        {
+            var db = new BabyShopConnectionDB();
+            var sql = string.Format("select * from sanpham where khoa=0 {0} order by ngaycapnhat desc {1}", string.IsNullOrEmpty(key) ? "" : " and " + key, string.IsNullOrEmpty(order) ? "" : ", " + order);
+            return db.Page<sanpham>(pgNumb, itemsPerPg, sql);
         }
     }
 }

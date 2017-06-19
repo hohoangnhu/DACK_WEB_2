@@ -201,11 +201,12 @@
     <Compile Include="Areas\Admin\Controllers\QLNhaSanXuatController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLSanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLTaiKhoanController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ThongTinController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ThongKeController.cs" />
     <Compile Include="Areas\Admin\Models\BUS\QLloaisanphambus.cs" />
     <Compile Include="Areas\Admin\Models\BUS\QLNhaSanXuatbus.cs" />
     <Compile Include="Areas\Admin\Models\BUS\QLsanphambus.cs" />
     <Compile Include="Areas\Admin\Models\BUS\QLTaiKhoanbus.cs" />
+    <Compile Include="Areas\Admin\Models\BUS\QLThongKe.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -213,6 +214,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NhaSanXuatController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
+    <Compile Include="Controllers\ThongTinController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -751,6 +753,7 @@
     <Content Include="Areas\Admin\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Areas\Admin\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\ThongTin\ThongTin.cshtml" />
+    <Content Include="Areas\Admin\Views\ThongKe\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -763,7 +766,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -806,6 +811,7 @@
     <Content Include="Views\Shared\_LoaiSanPham.cshtml" />
     <Content Include="Views\BinhLuan\Index.cshtml" />
     <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\ThongTin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

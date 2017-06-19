@@ -7,32 +7,29 @@ using System.Web.Mvc;
 
 namespace DACK_WEB2.Controllers
 {
-    public class SanPhamController : Controller
+    public class ThongTinController : Controller
     {
-        // GET: SanPham
-        public ActionResult Index(int page = 1)
+        // GET: ThongTin
+        public ActionResult Index(string id)
         {
 
-            var dsSanPham = SanPhamBus.HienThiDanhSachSanPham(page, 3);
-            return View(dsSanPham);
-
-        }
-
-        // GET: SanPham/Details/5
-        public ActionResult Details(int id)
-        {
-            var ctSanPham = SanPhamBus.ChiTietSanPham(id);
-            ViewBag.sanphamlienquan = SanPhamBus.ListSPLQ(id);
+            var ctSanPham = ThongTinBus.layThongTin(id);
             return View(ctSanPham);
         }
 
-        // GET: SanPham/Create
+        // GET: ThongTin/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+
+        // GET: ThongTin/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: SanPham/Create
+        // POST: ThongTin/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -48,13 +45,13 @@ namespace DACK_WEB2.Controllers
             }
         }
 
-        // GET: SanPham/Edit/5
+        // GET: ThongTin/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: SanPham/Edit/5
+        // POST: ThongTin/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -70,13 +67,13 @@ namespace DACK_WEB2.Controllers
             }
         }
 
-        // GET: SanPham/Delete/5
+        // GET: ThongTin/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: SanPham/Delete/5
+        // POST: ThongTin/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -28,6 +28,13 @@ namespace DACK_WEB2.Models.Bus
                                                + "WHERE s.BiXoa = 0 AND s.MaNhaSanXuat = n.MaNhaSanXuat "
                                                + "AND s.MaLoaiSanPham = l.MaLoaiSanPham AND s.MaSanPham = @0", id);
         }
+        public static IEnumerable<sanpham> ListSPLQ(int id)
+        {
+            using (var db = new BabyShopConnectionDB())
+            {
+                return db.Query<sanpham>("SELECT * FROM sanpham WHERE MaSanPham <> @0 AND MaLoaiSanPham =  (Select MaLoaiSanPham from sanpham where MaSanPham = @0)", id);
+            }
+        }
 
     }
 }
