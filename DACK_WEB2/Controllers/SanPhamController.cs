@@ -90,5 +90,16 @@ namespace DACK_WEB2.Controllers
                 return View();
             }
         }
+
+        public ActionResult TimKiem(string SearchTerm)
+        {
+            var dsSanPham = SanPhamBus.HienThiDanhSachSanPham();
+            if (!String.IsNullOrEmpty(SearchTerm))
+            {
+                dsSanPham = SanPhamBus.TimKiem(SearchTerm);
+            }
+            ViewBag.SearchTerm = SearchTerm;
+            return View(dsSanPham);
+        }
     }
 }

@@ -25,7 +25,7 @@
 // 
 //     Connection String Name: `BabyShopConnection`
 //     Provider:               `System.Data.SqlClient`
-//     Connection String:      `Data Source=THAMVO-PC;Initial Catalog=babyshop4;Integrated Security=True`
+//     Connection String:      `Data Source=THAMVO-PC;Initial Catalog=babyshop5;Integrated Security=True`
 //     Schema:                 ``
 //     Include Views:          `False`
 
@@ -552,6 +552,10 @@ namespace BabyShopConnection
 
 
 
+	[PrimaryKey("id")]
+
+
+
 
 	[ExplicitColumns]
 
@@ -777,54 +781,6 @@ namespace BabyShopConnection
 
 
 		[Column] public int? BiXoa { get; set; }
-
-
-
-	}
-
-    
-
-	[TableName("dbo.sysdiagrams")]
-
-
-
-	[PrimaryKey("diagram_id")]
-
-
-
-
-	[ExplicitColumns]
-
-    public partial class sysdiagram : BabyShopConnectionDB.Record<sysdiagram>  
-    {
-
-
-
-		[Column] public string name { get; set; }
-
-
-
-
-
-		[Column] public int principal_id { get; set; }
-
-
-
-
-
-		[Column] public int diagram_id { get; set; }
-
-
-
-
-
-		[Column] public int? version { get; set; }
-
-
-
-
-
-		[Column] public byte[] definition { get; set; }
 
 
 

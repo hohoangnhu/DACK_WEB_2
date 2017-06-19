@@ -29,5 +29,12 @@ namespace DACK_WEB2.Models.Bus
                                                + "AND s.MaLoaiSanPham = l.MaLoaiSanPham AND s.MaSanPham = @0", id);
         }
 
+        public static IEnumerable<BabyShopConnection.sanpham> TimKiem(string q)
+        {
+            var db = new BabyShopConnectionDB();
+            var a = db.Query<BabyShopConnection.sanpham>("select * from sanpham where TenSanPham like '%" + q + "%'");
+            return a;
+        }
+
     }
 }
