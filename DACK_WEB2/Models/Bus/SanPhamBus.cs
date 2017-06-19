@@ -1,4 +1,39 @@
-﻿using BabyShopConnection;
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using BabyShopConnection;
 using PetaPoco;
 using System;
 using System.Collections.Generic;
@@ -32,7 +67,7 @@ namespace DACK_WEB2.Models.Bus
         {
             using (var db = new BabyShopConnectionDB())
             {
-                return db.Query<sanpham>("SELECT * FROM sanpham WHERE MaSanPham <> @0 AND MaLoaiSanPham =  (Select MaLoaiSanPham from sanpham where MaSanPham = @0)", id);
+                return db.Query<sanpham>("SELECT top 3 * FROM sanpham WHERE MaSanPham <> @0 AND MaLoaiSanPham =  (Select MaLoaiSanPham from sanpham where MaSanPham = @0) ORDER BY SoLuongBan DESC ", id);
             }
         }
 

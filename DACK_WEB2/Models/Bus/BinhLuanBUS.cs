@@ -13,11 +13,9 @@ namespace DACK_WEB2.Models.Bus
         {
             using (var db = new BabyShopConnectionDB())
             {
-                BinhLuan binhluan = new BinhLuan();
-                binhluan.MaSanPham = MaSanPham;
-                binhluan.MaTaiKhoan = MaTaiKhoan;
-                binhluan.NoiDung = binhluan.NoiDung;
-                db.Execute("INSERT INTO [dbo].[BinhLuan]([MaSanPham],[TenTaiKhoan],[MaTaiKhoan],[NoiDung])VALUES(@0,@1,@2,@3)", MaSanPham, TenTaiKhoan, MaTaiKhoan, NoiDung);
+                
+                var ds = "INSERT INTO [dbo].[BinhLuan]([MaSanPham],[TenTaiKhoan],[MaTaiKhoan],[NoiDung])VALUES(@0,@1,@2,@3)";
+                db.Execute(ds, MaSanPham, TenTaiKhoan, MaTaiKhoan, NoiDung);
             }
         }
         public static IEnumerable<BinhLuan> DanhSachBL(int MaSanPham)
@@ -28,12 +26,7 @@ namespace DACK_WEB2.Models.Bus
             }
         }
 
-        public static Page<BinhLuan> DanhSach(int pageNumber, int itemPerPage, int MaSanPham)
-        {
-            using (var db = new BabyShopConnectionDB())
-            {
-                return db.Page<BinhLuan>(pageNumber, itemPerPage, "select * from BinhLuan where MaSanPham = @0", MaSanPham);
-            }
-        }
+       
+
     }
 }

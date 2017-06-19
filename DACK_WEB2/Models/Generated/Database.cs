@@ -25,14 +25,9 @@
 // 
 //     Connection String Name: `BabyShopConnection`
 //     Provider:               `System.Data.SqlClient`
-<<<<<<< HEAD
 //     Connection String:      `Data Source=DESKTOP-Q1JH5H2;Initial Catalog=babyshop4;Integrated Security=True`
-=======
-//     Connection String:      `Data Source=THAMVO-PC;Initial Catalog=babyshop5;Integrated Security=True`
->>>>>>> 869f06bb1b8de17eed39dfc3f13fcf0eb799bf6b
 //     Schema:                 ``
 //     Include Views:          `True`
-
 
 
 using System;
@@ -40,7 +35,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PetaPoco;
-using System.Web.Mvc;
 
 namespace BabyShopConnection
 {
@@ -394,23 +388,27 @@ namespace BabyShopConnection
 
 
 		[Column] public string UserName { get; set; }
-<<<<<<< HEAD
 
 
 
 
 
-=======
->>>>>>> c8d97b35c2730e4fa1a5451385e03341f404d228
 		[Column] public string FullName { get; set; }
+
+
+
+
+
 		[Column] public bool? Gender { get; set; }
+
+
+
+
+
 		[Column] public string NgaySinh { get; set; }
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> c8d97b35c2730e4fa1a5451385e03341f404d228
 	}
 
     
@@ -553,7 +551,7 @@ namespace BabyShopConnection
 
 
 
-		[Column] public int MaTaiKhoan { get; set; }
+		[Column] public string MaTaiKhoan { get; set; }
 
 
 
@@ -568,10 +566,6 @@ namespace BabyShopConnection
     
 
 	[TableName("dbo.GioHang")]
-
-
-
-	[PrimaryKey("id")]
 
 
 
@@ -739,7 +733,7 @@ namespace BabyShopConnection
 
 
 
-	[AllowHtml][Column] public string MoTa { get; set; }
+		[Column] public string MoTa { get; set; }
 
 
 
@@ -800,6 +794,54 @@ namespace BabyShopConnection
 
 
 		[Column] public int? BiXoa { get; set; }
+
+
+
+	}
+
+    
+
+	[TableName("dbo.sysdiagrams")]
+
+
+
+	[PrimaryKey("diagram_id")]
+
+
+
+
+	[ExplicitColumns]
+
+    public partial class sysdiagram : BabyShopConnectionDB.Record<sysdiagram>  
+    {
+
+
+
+		[Column] public string name { get; set; }
+
+
+
+
+
+		[Column] public int principal_id { get; set; }
+
+
+
+
+
+		[Column] public int diagram_id { get; set; }
+
+
+
+
+
+		[Column] public int? version { get; set; }
+
+
+
+
+
+		[Column] public byte[] definition { get; set; }
 
 
 
@@ -896,20 +938,50 @@ namespace BabyShopConnection
 
 
 	}
-<<<<<<< HEAD
 
-
-=======
     
+
 	[TableName("dbo.v_GioHang")]
+
+
+
+
 	[ExplicitColumns]
+
     public partial class v_GioHang : BabyShopConnectionDB.Record<v_GioHang>  
     {
+
+
+
 		[Column] public int id { get; set; }
+
+
+
+
+
 		[Column] public string MaTaiKhoan { get; set; }
-		[Column] public int MaSanPham { get; set; }
-		[Column] public int SoLuong { get; set; }
+
+
+
+
+
+		[Column] public int? MaSanPham { get; set; }
+
+
+
+
+
+		[Column] public int? SoLuong { get; set; }
+
+
+
+
+
 		[Column] public string TenSanPham { get; set; }
+
+
+
 	}
->>>>>>> c8d97b35c2730e4fa1a5451385e03341f404d228
+
+
 }

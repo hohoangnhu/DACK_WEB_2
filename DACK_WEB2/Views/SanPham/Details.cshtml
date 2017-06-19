@@ -93,4 +93,29 @@
 <div class="col-sm-12">
     @Html.Action("Index", "BinhLuan", new { MaSanPham = Model.MaSanPham})
 </div>
-
+@*@section scripts{
+    <script>
+        function postComment() {
+            const content = $("#comment-content").val();
+            const maSanPham = @Model.MaSanPham;
+            const tenTaiKhoan = "@User.Identity.Name";
+            $.post("/api/binhluanapi", {"MaSanPham:":maSanPham, "NoiDung":content}, function(){
+                //alert("Ðã thêm bình luân");
+                $("#comments").prepend("<div class=\"comment\"><div class=\"comment-name\">"+ tenTaiKhoan +"</div><div class=\"comment-content\">"+ content +"</div></div>")
+        });
+        }
+    </script>
+}*@
+@*@section scripts{
+    <script>
+        function postComment(){
+            const content = $("#comment-content").val();
+            const maSanPham = @Model.MaSanPham;
+            const tenTaiKhoan = "@User.Identity.Name";
+            $.post("/api/apibinhluan", {"MaSanPham":maSanPham, "NoiDung":content}, function(){
+                //alert("Ðã thêm bình luân");
+                $("#comments").prepend("<div class=\"comment\"><div class=\"comment-name\">"+ tenTaiKhoan +"</div><div class=\"comment-content\">"+ content +"</div></div>")
+            });
+        }
+    </script>
+}*@

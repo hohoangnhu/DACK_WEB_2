@@ -16,6 +16,8 @@
         @*@Html.TextArea("NoiDung")*@
         <textarea style="width:100%" name="NoiDung"></textarea>
         <input type="submit" value="Đăng" />
+    @*<textarea id="comment-content"></textarea>
+    <input value="Ðăng" type="button" onclick="postComment()" />*@
 
     }
 }
@@ -24,7 +26,7 @@ else
     <div>Vui lòng <a href="/Account/Login">Đăng Nhập</a> để bình luận</div>
 }
 <div id="comments">
-   @*@foreach (var item in Model.Items)*@
+  
    @foreach(var item in Model)
    {
         <div class="comment">
@@ -36,10 +38,7 @@ else
 </div>
 
 <ul class="pagination">
-    @*for (int i = 1; i <= Model.TotalPages; i++)
-    {
-        <li>@Html.ActionLink(i.ToString(), "Index", new { page = i })</li>
-    }*@
+   
     @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
 </ul>
 
