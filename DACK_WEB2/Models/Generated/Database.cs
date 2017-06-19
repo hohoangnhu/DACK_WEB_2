@@ -27,7 +27,7 @@
 //     Provider:               `System.Data.SqlClient`
 //     Connection String:      `Data Source=DESKTOP-Q1JH5H2;Initial Catalog=babyshop4;Integrated Security=True`
 //     Schema:                 ``
-//     Include Views:          `False`
+//     Include Views:          `True`
 
 
 
@@ -390,27 +390,23 @@ namespace BabyShopConnection
 
 
 		[Column] public string UserName { get; set; }
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> c8d97b35c2730e4fa1a5451385e03341f404d228
 		[Column] public string FullName { get; set; }
-
-
-
-
-
 		[Column] public bool? Gender { get; set; }
-
-
-
-
-
 		[Column] public string NgaySinh { get; set; }
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> c8d97b35c2730e4fa1a5451385e03341f404d228
 	}
 
     
@@ -940,6 +936,20 @@ namespace BabyShopConnection
 
 
 	}
+<<<<<<< HEAD
 
 
+=======
+    
+	[TableName("dbo.v_GioHang")]
+	[ExplicitColumns]
+    public partial class v_GioHang : BabyShopConnectionDB.Record<v_GioHang>  
+    {
+		[Column] public int id { get; set; }
+		[Column] public string MaTaiKhoan { get; set; }
+		[Column] public int MaSanPham { get; set; }
+		[Column] public int SoLuong { get; set; }
+		[Column] public string TenSanPham { get; set; }
+	}
+>>>>>>> c8d97b35c2730e4fa1a5451385e03341f404d228
 }

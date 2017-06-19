@@ -1,5 +1,5 @@
 ﻿using DACK_WEB2.Models.Bus;
-
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +11,9 @@ namespace DACK_WEB2.Controllers
     public class LoaiSanPhamController : Controller
     {
         // GET: LoaiSanPham
-        public ActionResult Index(int id)//add view
+        public ActionResult Index(int id, int page = 1, int pageSize = 3)//add view
         {
-            var dsloaisp = LoaiSanPhamBUS.ChiTiet(id);
+            var dsloaisp = LoaiSanPhamBUS.ChiTiet(id).ToPagedList(page, pageSize);
             return View(dsloaisp);
         }
 

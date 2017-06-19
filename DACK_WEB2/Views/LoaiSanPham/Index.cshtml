@@ -1,5 +1,5 @@
-﻿@model  IEnumerable<BabyShopConnection.sanpham> 
-
+﻿@model PagedList.IPagedList<BabyShopConnection.sanpham> 
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -36,3 +36,6 @@
         </div>
     </div>
 }
+<ul class="pagination">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</ul>

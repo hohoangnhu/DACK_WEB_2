@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 @model  IEnumerable<BabyShopConnection.sanpham>  
 
+=======
+﻿@model PagedList.IPagedList< BabyShopConnection.sanpham>
+@using PagedList.Mvc;
+>>>>>>> c8d97b35c2730e4fa1a5451385e03341f404d228
 
 
 @{
@@ -37,9 +42,6 @@
         </div>
     </div>
 }
-@*<ul class="pagination">
-    @for (int i = 0; i <= Model.TotalPages; i++)
-            {
-        <li>@Html.ActionLink(i.ToString(), "Index", new { page = i })</li>
-    }
-</ul>*@
+<ul class="pagination">
+   @Html.PagedListPager(Model, page => Url.Action("Index", new { page}))
+</ul>
