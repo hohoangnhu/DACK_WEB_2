@@ -839,9 +839,13 @@
     <Content Include="Views\Shared\_LoaiSanPham.cshtml" />
     <Content Include="Views\BinhLuan\Index.cshtml" />
     <Content Include="Views\GioHang\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\ThongTin\Index.cshtml" />
     <Content Include="Views\Shared\_TimKiem.cshtml" />
     <Content Include="Views\SanPham\TimKiem.cshtml" />
+=======
+    <Content Include="Views\GioHang\ThanhToan.cshtml" />
+>>>>>>> 7878fe2b5d3b5311947db40e54525f65e226c754
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

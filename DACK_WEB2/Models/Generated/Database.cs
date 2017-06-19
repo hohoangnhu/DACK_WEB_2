@@ -978,9 +978,28 @@ namespace BabyShopConnection
 
 
 		[Column] public string TenSanPham { get; set; }
+<<<<<<< HEAD
 
 
 
+=======
+		[Column] public int? GiaBan { get; set; }
+	}
+    
+	[TableName("dbo.View_BanHang")]
+	[ExplicitColumns]
+    public partial class View_BanHang : BabyShopConnectionDB.Record<View_BanHang>  
+    {
+		[Column] public int id { get; set; }
+		[Column] public string MaTaiKhoan { get; set; }
+		[Column] public int MaSanPham { get; set; }
+		[Column] public int SoLuong { get; set; }
+		[Column] public string TenSanPham { get; set; }
+		[Column] public int? GiaBan { get; set; }
+		[Column] public string Expr1 { get; set; }
+		[Column] public int Expr2 { get; set; }
+		[Column] public int Expr3 { get; set; }
+>>>>>>> 7878fe2b5d3b5311947db40e54525f65e226c754
 	}
 
 

@@ -33,8 +33,9 @@ namespace DACK_WEB2.Models.Bus
         {
             using (var db = new BabyShopConnectionDB())
             {
-                db.Execute("update from GioHang set [SoLuong] = @0 where id = @1", soLuong, id);
+                db.Execute("update GioHang set [SoLuong] = @0 where id = @1", soLuong, id);
             }
         }
+      
     }
 }
