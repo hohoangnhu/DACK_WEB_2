@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using DACK_WEB2.Models.Bus;
+using PagedList;
 
 namespace DACK_WEB2.Controllers
 {
@@ -16,15 +17,16 @@ namespace DACK_WEB2.Controllers
         {
             if (MaSanPham == 0)
                 return Redirect("/");
-
             BinhLuanBUS.Them(MaSanPham, User.Identity.Name, User.Identity.GetUserId(), NoiDung);
             return RedirectToAction("Details", "SanPham", new { Id = MaSanPham });
         }
 
-        public ActionResult Index(int MaSanPham)
+        public ActionResult Index(int MaSanPham, int page = 1, int pagesize = 3)
         {
             ViewBag.MaSanPham = MaSanPham;
-            return View(BinhLuanBUS.DanhSach(MaSanPham));
+            var dsBL = BinhLuanBUS.DanhSachBL(MaSanPham).ToPagedList(page, pagesize);
+            return View(dsBL);
+
         }
     }
 }
