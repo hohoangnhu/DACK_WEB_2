@@ -101,5 +101,23 @@ namespace DACK_WEB2.Controllers
             ViewBag.SearchTerm = SearchTerm;
             return View(dsSanPham);
         }
+
+        public ActionResult TKNangCao()
+        {
+
+            ViewBag.MaNhaSanXuat = new SelectList(NhaSanXuatBUS.DanhSach(), "MaNhaSanXuat", "TenNhaSanXuat");
+            ViewBag.MaLoaiSanPham = new SelectList(LoaiSanPhamBUS.DanhSach(), "MaLoaiSanPham", "TenLoaiSanPham");
+
+            return View();
+        }
+
+        public ActionResult TimKiemNangCao(string MaNhaSanXuat, string MaLoaiSanPham, string tensp, double giatu, double giaden, BabyShopConnection.sanpham sp)
+        {
+            var dsSanPham = SanPhamBus.HienThiDanhSachSanPham();
+
+            dsSanPham = SanPhamBus.TimKiemNangCao(MaNhaSanXuat, MaLoaiSanPham, tensp, giatu, giaden);
+
+            return View(dsSanPham);
+        }
     }
 }

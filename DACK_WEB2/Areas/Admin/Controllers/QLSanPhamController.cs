@@ -12,10 +12,12 @@ namespace DACK_WEB2.Areas.Admin.Controllers
     public class QLSanPhamController : Controller
     {
         // GET: Admin/QLSanPham
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var ds = QLsanphambus.DanhSachSanPham();
-            return View(ds);
+            //var ds = QLsanphambus.DanhSachSanPham();
+            //return View(ds);
+            var dsSanPham = QLsanphambus.HienThiDanhSachSanPham(page, 7);
+            return View(dsSanPham);
         }
 
         // GET: Admin/QLSanPham/Details/5

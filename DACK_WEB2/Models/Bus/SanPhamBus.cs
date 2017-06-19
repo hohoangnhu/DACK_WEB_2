@@ -36,5 +36,12 @@ namespace DACK_WEB2.Models.Bus
             return a;
         }
 
+        public static IEnumerable<BabyShopConnection.sanpham> TimKiemNangCao(string nsx, string lsp, string tensp, double giatu, double giaden)
+        {
+            var db = new BabyShopConnectionDB();
+            return db.Query<BabyShopConnection.sanpham>("select * from sanpham where TenSanPham like N'%" + tensp + "%' AND MaLoaiSanPham =" + lsp + " AND MaNhaSanXuat =" + nsx + " AND GiaBan >" + giatu + " AND GiaBan <" + giaden);
+
+        }
+
     }
 }

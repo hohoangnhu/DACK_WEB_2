@@ -1,4 +1,5 @@
 ﻿using BabyShopConnection;
+using PetaPoco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,16 @@ namespace DACK_WEB2.Areas.Admin.Models.BUS
         {
             var db = new BabyShopConnectionDB();
             db.Update<nhasanxuat>("SET TenNhaSanXuat=@0, LoGoURL=@1, BiXoa=@2 where MaNhaSanXuat=@3", nsx.TenNhaSanXuat, nsx.LoGoURL, nsx.BiXoa, id);
+        }
+        public static nhasanxuat ChiTietNhaSanXuat(int id)
+        {
+            var db = new BabyShopConnectionDB();
+            return db.SingleOrDefault<nhasanxuat>("SELECT * FROM nhasanxuat WHERE MaNhaSanXuat = @0", id);
+        }
+        public static Page<nhasanxuat> HienThiDanhNhaSanXuat(int pageNumber, int itemPerpage)
+        {
+            var db = new BabyShopConnectionDB();
+            return db.Page<nhasanxuat>(pageNumber, itemPerpage, "SELECT * FROM NhaSanXuat WHERE BiXoa <> 1 ");
         }
     }
 }

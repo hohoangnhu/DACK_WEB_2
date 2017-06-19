@@ -1,4 +1,5 @@
 ﻿using BabyShopConnection;
+using PetaPoco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,11 @@ namespace DACK_WEB2.Areas.Admin.Models.BUS
         {
             var db = new BabyShopConnectionDB();
             db.Delete<sanpham>("WHERE MaSanPham = @0", id);
+        }
+        public static Page<sanpham> HienThiDanhSachSanPham(int pageNumber, int itemPerpage)
+        {
+            var db = new BabyShopConnectionDB();
+            return db.Page<sanpham>(pageNumber, itemPerpage, "SELECT * FROM SanPham WHERE BiXoa <> 1 ORDER BY SoLuongBan DESC ");
         }
     }
 }

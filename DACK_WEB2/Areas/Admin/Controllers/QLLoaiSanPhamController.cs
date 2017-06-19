@@ -12,9 +12,9 @@ namespace DACK_WEB2.Areas.Admin.Controllers
     public class QLLoaiSanPhamController : Controller
     {
         // GET: Admin/QLLoaiSanPham
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var ds = QLloaisanphambus.HienThiLoaiSanPham();
+            var ds = QLloaisanphambus.HienThiDanhSachLoaiSanPham(page,3);
             return View(ds);
         }
 
@@ -32,7 +32,7 @@ namespace DACK_WEB2.Areas.Admin.Controllers
 
         // POST: Admin/QLLoaiSanPham/Create
         [HttpPost]
-        public ActionResult Create(loaisanpham lsp)
+        public ActionResult Create(BabyShopConnection.loaisanpham lsp)
         {
 
             QLloaisanphambus.ThemLoaiSanPham(lsp);
@@ -42,23 +42,27 @@ namespace DACK_WEB2.Areas.Admin.Controllers
         // GET: Admin/QLLoaiSanPham/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(QLloaisanphambus.ChiTietLoaiSanPham(id));
         }
 
         // POST: Admin/QLLoaiSanPham/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id,BabyShopConnection.loaisanpham lsp)
         {
-            try
-            {
-                // TODO: Add update logic here
+            //try
+            //{
+            //    // TODO: Add update logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            //    return RedirectToAction("Index");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
+           QLloaisanphambus.EditLoaiSanPham(id, lsp);
+            return RedirectToAction("Index");
+
+
         }
 
         // GET: Admin/QLLoaiSanPham/Delete/5

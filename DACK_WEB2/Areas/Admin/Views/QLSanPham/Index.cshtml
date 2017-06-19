@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BabyShopConnection.sanpham>
+﻿@model PetaPoco.Page<BabyShopConnection.sanpham>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -31,12 +31,12 @@
                     <th width="80">Xuất xứ</th>
                     <th width="70">Giá bán</th>
                     <th width="30">Trạng thái</th>
-                    <th width="100">Thao tác</th>
+                    <th width="100" >Thao tác</th>
                 </tr>
             </thead>
             <tbody>
                 @{ int i = 1; }
-                @foreach (var item in Model)
+                @foreach(var item in Model.Items)
                 {
 
                     <tr class="gradeX">
@@ -68,7 +68,11 @@
     </div>
 </div>
 
-
-
-
-
+<ul class="pagination" align="right">
+    @for (int n = 1; n <= Model.TotalPages; n++)
+    {
+        
+                 <d>@Html.ActionLink(n.ToString(), "Index", new { page = n })</d> 
+           
+    }
+</ul>

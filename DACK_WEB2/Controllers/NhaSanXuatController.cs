@@ -1,4 +1,5 @@
 ﻿using DACK_WEB2.Models.Bus;
+using PagedList;
 using System.Web.Mvc;
 
 namespace DACK_WEB2.Controllers
@@ -6,9 +7,9 @@ namespace DACK_WEB2.Controllers
     public class NhaSanXuatController : Controller
     {
         // GET: NhaSanXuat
-        public ActionResult Index(int id)
+        public ActionResult Index(int id, int page = 1, int pagesize = 3)
         {
-            var dsLoaiSanPham = LoaiSanPhamBUS.ChiTiet(id);
+            var dsLoaiSanPham = LoaiSanPhamBUS.ChiTiet(id).ToPagedList(page, pagesize);
             return View(dsLoaiSanPham);
         }
 

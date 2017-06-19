@@ -1,0 +1,22 @@
+﻿@model IEnumerable<BabyShopConnection.v_GioHang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Index</h2>
+@foreach ( var item in Model )
+{
+    <div>
+        @using (Html.BeginForm("CapNhat", "GioHang", FormMethod.Post))
+        {
+
+
+            @Html.Hidden("id", item.id)
+            <div class="col-md-8">@item.TenSanPham</div>
+            <div class="col-md-2"><input name="soLuong" value="@item.SoLuong" /></div>
+            <div class="col-md-2"><input type="submit" value="Cập Nhật"/></div>
+        }
+    </div>
+}
+

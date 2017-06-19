@@ -1,13 +1,12 @@
-﻿@model  BabyShopConnection.sanpham
+﻿@model PagedList.IPagedList< BabyShopConnection.sanpham>
+@using PagedList.Mvc;
 
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-
-
-@foreach (var item in Model)
+@foreach(var item in Model)
 
 {
     <div class="col-sm-4">
@@ -38,3 +37,6 @@
         </div>
     </div>
 }
+<ul class="pagination">
+   @Html.PagedListPager(Model, page => Url.Action("Index", new { page}))
+</ul>

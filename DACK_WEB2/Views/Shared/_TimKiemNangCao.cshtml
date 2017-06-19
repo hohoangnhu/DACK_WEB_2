@@ -1,0 +1,22 @@
+﻿
+@using (Html.BeginForm("TimKiemNangCao", "SanPham", FormMethod.Get, new { @class = "navbar-form navbar-right", role = "search", id = "search-form" }))
+{
+
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Nhà sản xuất" name="nsx" value="@ViewBag.nsx" id="search-box">
+        <input type="text" class="form-control" placeholder="Loại sản phẩm" name="lsp" value="@ViewBag.lsp" id="search-box">
+        <input type="text" class="form-control" placeholder="Tên sản phẩm" name="tensp" value="@ViewBag.tensp" id="search-box">
+        <input type="text" class="form-control" placeholder="giá từ" name="giatu" value="@ViewBag.giatu" id="search-box">
+        <input type="text" class="form-control" placeholder="giá đến" name="giaden" value="@ViewBag.giaden" id="search-box">
+        @*@Html.Partial("_NSXPartial",TemplateDEMO.Models.bus.NhaSanXuatBus.DanhSach())*@
+        @*// @Model.ElementAt(0).
+            @Html.DropDownList("producer_id", null, new { @style = "float:left; width: 300px; background:black;height:30px;" })*@
+        @*<select>
+            <option>Apple</option>
+            <option>Intel</option>
+        </select>*@
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default hidden-xs"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+}
